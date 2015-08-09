@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1406065845 source:c:\users\william\btsync\java\cpp\weather-stats.cpp
+	"std_lib_facilities.h"
+
+1406065733 c:\users\william\btsync\java\cpp\std_lib_facilities.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<cmath>
+	<cstdlib>
+	<string>
+	<list>
+	<vector>
+	<algorithm>
+	<stdexcept>
+	<hash_map>
+	<ext/hash_map>
+	<iomanip>
+
+1426172163 source:c:\users\2015-15\java-dev\cpp\project1\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstdlib>
+
+1426192106 source:e:\quotes\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstdlib>
+	<time.h>
+
