@@ -1,0 +1,93 @@
+---
+- name: Ubuntu
+  flavors:
+    - name: Desktop
+      releases:
+        - version: "15.04"
+          arch: amd64
+          link: http://mirror.rit.edu/ubuntu-releases/15.04/ubuntu-15.04-desktop-amd64.iso
+        - version: "15.04"
+          arch: i386
+          link: http://mirror.rit.edu/ubuntu-releases/15.04/ubuntu-15.04-desktop-i386.iso
+    - name: Server
+      releases:
+        - version: "15.04"
+          arch: amd64
+          link: http://mirror.rit.edu/ubuntu-releases/15.04/ubuntu-15.04-server-amd64.iso
+        - version: "15.04"
+          arch: i386
+          link: http://mirror.rit.edu/ubuntu-releases/15.04/ubuntu-15.04-server-i386.iso
+- name: Debian
+  flavors:
+    - name: Standard
+      releases:
+        - version: "8.1.0"
+          arch: i386
+          link: http://mirror.rit.edu/debian-cd/current-live/i386/iso-hybrid/debian-live-8.1.0-i386-standard.iso
+        - version: "8.1.0"
+          arch: amd64
+          link: http://mirror.rit.edu/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.1.0-amd64-standard.iso
+    - name: GNOME
+      releases:
+        - version: "8.1.0"
+          arch: i386
+          link: http://mirror.rit.edu/debian-cd/current-live/i386/iso-hybrid/debian-live-8.1.0-i386-gnome-desktop.iso
+        - version: "8.1.0"
+          arch: amd64
+          link: http://mirror.rit.edu/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.1.0-amd64-gnome-desktop.iso
+    - name: KDE
+      releases:
+        - version: "8.1.0"
+          arch: i386
+          link: http://mirror.rit.edu/debian-cd/current-live/i386/iso-hybrid/debian-live-8.1.0-i386-kde-desktop.iso
+        - version: "8.1.0"
+          arch: amd64
+          link: http://mirror.rit.edu/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.1.0-amd64-kde-desktop.iso
+    - name: LXDE
+      releases:
+        - version: "8.1.0"
+          arch: i386
+          link: http://mirror.rit.edu/debian-cd/current-live/i386/iso-hybrid/debian-live-8.1.0-i386-lxde-desktop.iso
+        - version: "8.1.0"
+          arch: amd64
+          link: http://mirror.rit.edu/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.1.0-amd64-lxde-desktop.iso
+- name: CentOS
+  flavors:
+    - name: LiveCD
+      releases:
+        - version: "7"
+          arch: x86_64
+          link: http://mirror.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-LiveCD-1503.iso
+    - name: LiveGNOME
+      releases:
+        - version: "7"
+          arch: x86_64
+          link: http://mirror.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-LiveGNOME-1503.iso
+    - name: LiveKDE
+      releases:
+        - version: "7"
+          arch: x86_64
+          link: http://mirror.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-LiveKDE-1503.iso
+    - name: Minimal
+      releases:
+        - version: "7"
+          arch: x86_64
+          link: http://mirror.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso
+- name: Fedora
+  flavors:
+    - name: Workstation
+      releases:
+        - version: "22"
+          arch: x86_64
+          link: http://mirror.rit.edu/fedora/fedora/linux/releases/22/Workstation/x86_64/iso/Fedora-Live-Workstation-x86_64-22-3.iso
+        - version: "22"
+          arch: i386
+          link: http://mirror.rit.edu/fedora/fedora/linux/releases/22/Workstation/i386/iso/Fedora-Live-Workstation-i686-22-3.iso
+    - name: Server
+      releases:
+        - version: "22"
+          arch: x86_64
+          link: http://mirror.rit.edu/fedora/fedora/linux/releases/22/Server/x86_64/iso/Fedora-Server-DVD-x86_64-22.iso
+        - version: "22"
+          arch: i386
+          link: http://mirror.rit.edu/fedora/fedora/linux/releases/22/Server/i386/iso/Fedora-Server-DVD-i386-22.iso

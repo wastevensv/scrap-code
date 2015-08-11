@@ -1,0 +1,7 @@
+{
+  "name":"DistroIndex",
+  "version":"0.0.0",
+  "dependencies": {
+    "rimraf" : "2.1"
+  }
+}
