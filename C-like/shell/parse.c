@@ -22,12 +22,12 @@ void parsestring(char com[])
       if(c == ' ' || c == '\0') break; // If space or EOL, break out of read loop.
       strncat(words[wc], &c, 1);
     }
-    // --- End Read Loop ---
+    // ---  End Read Loop  ---
 
     printf("%d: %s\n", wc, words[wc]); // Print word and word number
     wc++; // Increment word count.
   } while(c != '\0' && wc < MAX_WORDS); // Loop until EOL or too many words.
-  // --- End Parse Loop ---
+  // ---  End Parse Loop  ---
 
   // TODO: Add code to do something with 'words' array.
 }
