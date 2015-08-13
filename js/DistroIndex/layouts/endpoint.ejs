@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="/res/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <ul>
+      <li><a href="../index.html">Back</a></li>
+    <% releases.forEach(function (release) { -%>
+      <li><a href="<%= release.link %>"> <%= release.version %> <%= release.arch %> </a></li>
+    <% }) -%>
+  </body>
+</html>
