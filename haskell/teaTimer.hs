@@ -14,13 +14,15 @@ countDown t = do putStrLn . show $ t
                  threadDelay (1000 * 1000)
                  countDown(t-1)
 
-chooseTea :: String -> IO()
+chooseTea :: String -> Int
 chooseTea strength
-      | strength == "black"  = countDown(15)
-      | strength == "green"  = countDown(10)
-      | strength == "herbal" = countDown(5)
+      | strength == "black"  = 15
+      | strength == "green"  = 10
+      | strength == "herbal" = 5
+      | otherwise = 10
 
 main = do
   putStrLn "How strong is your tea?"
   x <- getLine
-  chooseTea(x)
+  let t = chooseTea(x)
+  countDown(t)
