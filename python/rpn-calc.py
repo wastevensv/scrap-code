@@ -106,6 +106,10 @@ def main():
                 elif token is '/':
                     result = (1 / st.pop()) * st.pop()
                     st.push(result)
+                elif token is 'c':
+                    st = Stack()
+                elif token is 'q':
+                    return
                 else:
                     st.push(float(token))
             except ValueError: # Catch a token that isn't defined.
