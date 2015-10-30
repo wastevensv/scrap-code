@@ -1,5 +1,10 @@
-lastButOne xs = if head xs == last xs
-                             then xs
-                             else lastButOne(tail xs)
+lastButOne xs
+        | length xs == 2 = head xs
+        | otherwise = lastButOne(tail xs)
+
+elementAt :: Int -> [a] -> a
+elementAt 1 xs = head xs
+elementAt n xs = elementAt (n-1) (tail xs)
 
 main = print (lastButOne "abc")
+
