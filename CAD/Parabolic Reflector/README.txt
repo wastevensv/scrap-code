@@ -1,0 +1,1 @@
+Plans for a parabolic reflector. Optimized for audio at 3kHz. Intended for use with an alarm clock that I can hear, but not my roommates.
