@@ -1,6 +1,7 @@
 __author__ = 'William Stevens'
 """
     Written by: William A Stevens V, 10/22/2015
+    Updated: 10/27/2015, 11/10/2015
     Free to distribute and modify as long as this header remains.
     This code is provided as is, without warranty of any kind.
 """
@@ -94,21 +95,24 @@ def main():
         # Evaluation Loop
         for token in cmd_str:
             try:
-                if token is '+':
+                if token == '+':
                     result = st.pop() + st.pop()
                     st.push(result)
-                elif token is '-':
+                elif token == '-':
                     result = (-st.pop()) + st.pop()
                     st.push(result)
-                elif token is '*':
+                elif token == '*':
                     result = st.pop() * st.pop()
                     st.push(result)
-                elif token is '/':
+                elif token == '/':
                     result = (1 / st.pop()) * st.pop()
                     st.push(result)
-                elif token is 'c':
+                elif token == 'dup':
+                    result = st.peek()
+                    st.push(result)
+                elif token == 'c':
                     st = Stack()
-                elif token is 'q':
+                elif token == 'q':
                     return
                 else:
                     st.push(float(token))
