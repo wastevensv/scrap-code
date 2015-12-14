@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+    <script type=text/javascript>
+        $(function refresh() {
+            $.getJSON($SCRIPT_ROOT + '/testing/_top', function (data) {
+                $('#msgbox').text("");
+                $.each(data.msgs, function () {
+                    dt = new Date(Number(this.time));
+                    var monthNames = [
+                        "January", "February", "March",
+                        "April", "May", "June", "July",
+                        "August", "September", "October",
+                        "November", "December"
+                    ];
+                    day = dt.getDate();
+                    month = dt.getMonth();
+                    year = dt.getYear();
+
+                    hour = dt.getHours();
+                    minute = dt.getMinutes();
+
+                    dateString = monthNames[month] + " " + day + " " + hour + ":" + minute;
+
+                    $('#msgbox').append(dateString + " - " + this.msg + "<br/>");
+                })
+            });
+            setTimeout(refresh, (Math.random() * 5000) + 5000)
+            return false;
+        });
+        $(function () {
+            $('input#sendmsg').bind('click', function () {
+                $.getJSON($SCRIPT_ROOT + '/testing/_add', {
+                    msg: $('input[name="msg"]').val(),
+                    time: Date.now()
+                });
+                return false;
+            });
+        });
+    </script>
+
+    <p id="msgbox">
+    </p>
+    <form>
+        <label for="msg">Message:</label><input type="text" name="msg"/>
+        <input type="submit" id="sendmsg" value="Send Message"/>
+    </form>
+{% endblock %}
