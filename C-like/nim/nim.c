@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <time.h>
 
 #define START_COINS   12
 #define MAX_PICK 3
@@ -14,7 +13,7 @@ int main(int argc, char *argv[]) {
     fputs("\n", stdout);
     char user = getchar() - '0';
     getchar();
-    if(user < 1 || user > 3) {
+    if(user < 1 || user > MAX_PICK) {
       printf("Invalid Choice %d.\n", user);
       return -1;
     } else {
