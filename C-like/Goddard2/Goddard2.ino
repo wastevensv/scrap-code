@@ -24,6 +24,7 @@ void drive(byte left, byte right, byte time) {
   
   time = time - '0';
   if(time == 0) time = 10;
+  if(time > 10) time = 10;
   byte leftSpeed  = 0;  
   byte rightSpeed = 0;  
 
@@ -53,6 +54,11 @@ void drive(byte left, byte right, byte time) {
       digitalWrite(LR, 1);
       leftSpeed = 255;
       break;
+    default:
+      digitalWrite(LF, 0);
+      digitalWrite(LR, 0);
+      leftSpeed = 0;
+      break;
   }
 
   switch(right) {
@@ -81,6 +87,11 @@ void drive(byte left, byte right, byte time) {
       digitalWrite(RR, 1);
       rightSpeed = 255;
       break;
+    default:
+      digitalWrite(RF, 0);
+      digitalWrite(RR, 0);
+      rightSpeed = 0;
+      break;
   }
 
   analogWrite(LE, leftSpeed);
@@ -98,18 +109,28 @@ void setup() {
   pinMode(RF, OUTPUT);
   pinMode(RR, OUTPUT); 
   Serial.begin(9600);
+  Serial.write("\r\nDrive me! Please enter a command.\r\n");
+  Serial.write("Format: 'B'[Left (1-5)][Right (1-5)][Time (0-9)]\r\n");
+  Serial.write("Examples:\r\n");
+  Serial.write("Full forward for 500ms - 'B115'\r\n");
+  Serial.write("Turn Clockwise for 1s - 'B150'\r\n");
+  Serial.write("\r\nGoddard> ");
 }
 
 void loop() {
   if (Serial.available() > 0) {
-    if(Serial.read() == startByte) {
+    byte incomingByte = Serial.read();
+    Serial.write(incomingByte);
+    if(incomingByte == startByte) {
       // Read command.
-      while (Serial.available() < 3);
-      command[I_LEFT] = Serial.read();
-      command[I_RIGHT] = Serial.read();
-      command[I_TIME] = Serial.read();
+      for(int i = 0; i < 3; i++) {
+        while (Serial.available() == 0);
+        command[i] = Serial.read();
+        Serial.write(command[i]);
+      }
       // Parse command.
       drive(command[I_LEFT], command[I_RIGHT], command[I_TIME]);
+      Serial.write("\r\nGoddard> ");
     }
   }
 }
