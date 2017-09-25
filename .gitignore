@@ -11,3 +11,5 @@
 *.exe
 /**/node_modules/
 *.3dmk
+.#*
+\#*
